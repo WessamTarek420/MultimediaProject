@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_one/screen/Quiz.dart';
 import 'package:flutter_one/screen/about.dart';
 import 'home.dart';
 import 'song.dart';
@@ -49,6 +50,7 @@ class _MyAppState extends State<MyApp> {
 
   final options = [
     Home(),
+    Quiz(),
     SongLayout(),
   ];
 
@@ -112,7 +114,16 @@ class _MyAppState extends State<MyApp> {
                     scale: 2.2,
                   ),
                   title: Text(
-                    "امتحن نفسك",
+                    "تعلم",
+                    style: TextStyle(fontFamily: 'comic'),
+                  )),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/quiz.png',
+                    scale: 2.2,
+                  ),
+                  title: Text(
+                    "أمتحن نفسك",
                     style: TextStyle(fontFamily: 'comic'),
                   )),
               BottomNavigationBarItem(
