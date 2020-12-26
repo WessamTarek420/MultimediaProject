@@ -6,7 +6,6 @@ import 'package:audioplayers/audio_cache.dart';
 class WordLayout extends StatefulWidget {
   @override
   _WordLayoutState createState() => _WordLayoutState();
-
 }
 
 class _WordLayoutState extends State<WordLayout> {
@@ -73,6 +72,7 @@ class _WordLayoutState extends State<WordLayout> {
                 enlargeCenterPage: true,
                 autoPlay: true,
                 autoPlayAnimationDuration: Duration(milliseconds: 2500),
+                autoPlayInterval: Duration(milliseconds: 4500),
                 scrollDirection: Axis.horizontal,
                 onPageChanged: (index) {
                   if (word[index] == 'الحروف') {}
@@ -377,5 +377,6 @@ class _WordLayoutState extends State<WordLayout> {
   @override
   void dispose() {
     advancePlayer.stop();
+    super.dispose();
   }
 }

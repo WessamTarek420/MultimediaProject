@@ -62,7 +62,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     void AboutNavigator() {}
-    ;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
