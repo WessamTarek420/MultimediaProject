@@ -12,13 +12,10 @@ class _QuizLayoutState extends State<Quiz> {
   var player = AudioCache();
   Map<String, bool> score = {};
   Map<String, String> choices = {
-    '🍎': "أسد",
-    '🍏': "فيل",
-    '📘': "حصان",
-    '🐤': "عصفوره",
-    '🍊': "تمساح",
-    '🍇': "قطه",
-    '🐻': "بطه",
+    '🦁': "أسد",
+    '🐘': "فيل",
+    '🐴': "حصان",
+    '🐈': "قطه",
   };
   int index = 0;
   @override
@@ -29,6 +26,21 @@ class _QuizLayoutState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Image.asset('assets/arrow2.png'),
+        ),
+        backgroundColor: Colors.deepOrangeAccent,
+        elevation: 0.0,
+        centerTitle: true,
+        title: Text(
+          "المستوي الأول",
+          style: TextStyle(fontFamily: 'Comic'),
+        ),
+      ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -76,14 +88,14 @@ class _QuizLayoutState extends State<Quiz> {
             color: Colors.white,
             child: Text('Congratulations !'),
             alignment: Alignment.center,
-            height: 80,
+            height: 100,
             width: 200,
           );
         } else {
           return Container(
             alignment: Alignment.center,
             child: Text(choices[element]),
-            height: 80,
+            height: 150,
             width: 200,
           );
         }
@@ -110,7 +122,7 @@ class Movable extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         padding: EdgeInsets.all(7),
-        height: 50,
+        height: 100,
         child: Text(
           emoji,
           style: TextStyle(color: Colors.black, fontSize: 60),

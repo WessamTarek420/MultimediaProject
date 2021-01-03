@@ -10,15 +10,11 @@ class Home extends StatefulWidget {
 
 AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.LOW_LATENCY);
 
-//https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
-
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   AudioPlayer advancePlayer;
   AudioCache audioCache;
   AnimationController animationController;
   Animation animation;
-
-  //initiate the Playing
 
   @override
   void initState() {
